@@ -1,4 +1,4 @@
-# chavettas
+# Chavetta's
 
 Chavetta's - biblioteca JavaScript.
 
