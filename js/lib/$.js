@@ -43,7 +43,7 @@ if (typeof $ === 'undefined') {
 		} else {
 			element.className = className;	
 		}
-		return Utils.DOM;
+		return $;
 	};
 
 	$.delClass = function(element, className) {
@@ -61,7 +61,7 @@ if (typeof $ === 'undefined') {
 			var newClassNames = classes.join(' ').trim();
 			element.className = newClassNames;
 		}
-		return Utils.DOM;
+		return $;
 	};
 
 	$.hasClass = function(element, className) {
