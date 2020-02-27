@@ -24,3 +24,59 @@ if (typeof $ === 'undefined') {
 	);
 
 })();
+
+(function() {
+
+	$.addClass = function(element, className) {
+		var classNames = element.className;
+		if (classNames) {
+			var classes = classNames.split(' ');
+			var length = classes.length;
+			for (var i = 0 ; i < length ; i++) {
+				var clazz = classes[i];
+				if (clazz == className) {
+					return;
+				}
+			}
+			var newClassNames = classNames.trim() + ' ' + className;
+			element.className = newClassNames;
+		} else {
+			element.className = className;	
+		}
+		return Utils.DOM;
+	};
+
+	$.delClass = function(element, className) {
+		var classNames = element.className;
+		if (classNames) {
+			var classes = classNames.split(' ');
+			var length = classes.length;
+			for (var i = 0 ; i < length ; i++) {
+				var clazz = classes[i];
+				if (clazz == className) {
+					classes[i] = '';
+					break;
+				}
+			}
+			var newClassNames = classes.join(' ').trim();
+			element.className = newClassNames;
+		}
+		return Utils.DOM;
+	};
+
+	$.hasClass = function(element, className) {
+		var classNames = element.className;
+		if (classNames) {
+			var classes = classNames.split(' ');
+			var length = classes.length;
+			for (var i = 0 ; i < length ; i++) {
+				var clazz = classes[i];
+				if (clazz == className) {
+					return true;
+				}
+			}
+		}
+		return false;
+	};
+
+})();
